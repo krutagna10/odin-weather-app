@@ -1,11 +1,14 @@
-import MyCard from "./components/Card/Card";
+import { ThemeProvider } from "./components/theme-provider";
+import Card from "./components/card/card";
 
 function App() {
   return (
-    <div>
-      <h1 className="text-2xl">Odin Weather App</h1> 
-      <MyCard />
-    </div>
+    <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
+    <main>
+      <h1>Odin Weather App</h1>
+    <Card />
+    </main>
+    </ThemeProvider>
   );
 }
 
