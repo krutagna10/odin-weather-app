@@ -1,3 +1,13 @@
-# React Typescript Template
+## Odin Weather App
+The Odin Weather App fetches real-time weather data from a weather API based on user input.
 
-This is a template template for building project using React, TypeScript, Tailwind CSS, and ShadCN/UI
+### Links
+- Live Site URL: [https://odin-weather-app-10.vercel.app/] 
+
+### Technologies Used
+- React
+- Typescript
+- Tailwind
+- ShadCN
+- React Hook Form
+- Zod

@@ -1,4 +1,14 @@
 import { useState, useEffect } from "react";
+import {
+  Form,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormControl,
+  FormDescription,
+  FormMessage,
+} from "./ui/form";
+import { Input } from "./ui/input";
 
 const API_KEY = "WpiCXG9zatBV9JQICsPIyxTF4t97Cv5u";
 const URL = `https://api.giphy.com/v1/gifs/translate?api_key=${API_KEY}&s=cats`;
@@ -32,8 +42,8 @@ function Giphy() {
   }
 
   return (
-    <div>
-      <h1>Giphy</h1>
+    <div> 
+      <input type="text" placeholder="Enter gif name" />
       <img className="w-40" src={gifSrc} alt="Cat" />
     </div>
   );
