@@ -1,11 +1,11 @@
 import { ThemeProvider } from "./components/theme-provider";
-import Giphy from "./components/giphy";
+import Weather from "./components/weather";
 
 function App() {
   return (
     <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
       <main>
-        <Giphy />
+        <Weather />
       </main>
     </ThemeProvider>
   );
