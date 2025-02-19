@@ -1,38 +1,51 @@
+interface WeatherTableProps {
+  weatherForecast: {
+    datetime: string;
+    conditions: string;
+    temp: number;
+    humidity: number;
+    icon: string;
+  }[];
+}
+
 import {
   Table,
-  TableCaption,
-  TableHeader,
   TableBody,
-  TableRow,
+  TableCaption,
   TableHead,
+  TableRow,
+  TableHeader,
   TableCell,
 } from "./ui/table";
 
-interface WeatherTableProps {
-  address: string;
-  description: string;
-  timezone: string;
-}
-
-function WeatherTable({ address, description, timezone }: WeatherTableProps) {
+function WeatherTable({ weatherForecast }: WeatherTableProps) {
+  console.log(weatherForecast[0]);
   return (
-      <Table className="w-full">
-        <TableCaption>Weather Details</TableCaption>
-        <TableHeader>
-          <TableRow>
-            <TableHead>Address</TableHead>
-            <TableHead>Description</TableHead>
-            <TableHead>Timezone</TableHead>
+    <Table>
+      <TableCaption>Weather Details</TableCaption>
+      <TableHeader>
+        <TableRow>
+          <TableHead>Date</TableHead>
+          <TableHead>Conditions</TableHead>
+          <TableHead>Temperature</TableHead>
+          <TableHead>Humidity</TableHead>
+          <TableHead>Icon</TableHead>
+        </TableRow>
+      </TableHeader>
+      <TableBody>
+        {weatherForecast.map((weather, index) => (
+          <TableRow key={index}>
+            <TableCell>{weather.datetime}</TableCell>
+            <TableCell>{weather.conditions}</TableCell>
+            <TableCell>{weather.temp}</TableCell>
+            <TableCell>{weather.humidity}</TableCell>
+            <TableCell>
+              <img className="size-16" src={`./assets/${weather.icon}.svg`} />
+            </TableCell>
           </TableRow>
-        </TableHeader>
-        <TableBody>
-          <TableRow>
-            <TableCell>{address}</TableCell>
-            <TableCell>{description}</TableCell>
-            <TableCell>{timezone}</TableCell>
-          </TableRow>
-        </TableBody>
-      </Table>
+        ))}
+      </TableBody>
+    </Table>
   );
 }
 
