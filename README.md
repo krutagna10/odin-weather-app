@@ -9,5 +9,3 @@ The Odin Weather App fetches real-time weather data from a weather API based on 
 - Typescript
 - Tailwind
 - ShadCN
-- React Hook Form
-- Zod
